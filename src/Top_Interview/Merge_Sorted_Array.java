@@ -13,7 +13,7 @@ public class Merge_Sorted_Array {
 
         merge(nums1, m, nums2, n);
 
-        System.out.println("Merged Array: " + Arrays.toString(nums1));
+        System.out.println("Merged Array: " + Arrays.toString(nums1) );
     }
 
     //nums1 = [1,2,3,0,0,0]
