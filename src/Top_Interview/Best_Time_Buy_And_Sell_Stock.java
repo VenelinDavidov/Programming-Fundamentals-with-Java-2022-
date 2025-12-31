@@ -19,16 +19,18 @@ public class Best_Time_Buy_And_Sell_Stock {
 
     private static int maxProfit(int[] prices) {
 
-        int min = prices[0];
-        int profit = 0;
+        int minPrice = Integer.MAX_VALUE;
+        int maxProfit = 0;
 
-        for (int i = 0; i < prices.length; i++) {
-
-            if (prices[i] < min){
-                min = prices[i];
+        for (int price : prices) {
+            if (price < minPrice) {
+                minPrice = price; // по-добър ден за купуване
+            } else {
+                int profit = price - minPrice;
+                maxProfit = Math.max(maxProfit, profit);
             }
-            profit = Math.max(profit, prices[i] - min);
         }
-        return profit;
+
+        return maxProfit;
     }
 }
